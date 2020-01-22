@@ -86,11 +86,15 @@ class Connector
             $body .= $line . "\n";
         }
         $this->payload = [];
-        $response = $this->client->post($this->getEndpoint(), [
-            'headers' => $this->getRequestHeaders(),
-            'body'    => $body,
-        ]);
-        return ($response->getStatusCode() >= 200 && $response->getStatusCode() < 300);
+        try {
+            $response = $this->client->post($this->getEndpoint(), [
+                'headers' => $this->getRequestHeaders(),
+                'body'    => $body,
+            ]);
+            return ($response->getStatusCode() >= 200 && $response->getStatusCode() < 300);
+        } catch (\GuzzleHttp\Exception\ConnectException $e) {
+            return false;
+        }
     }
 
     /**
