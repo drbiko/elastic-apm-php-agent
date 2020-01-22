@@ -83,9 +83,9 @@ class EventBean
      * @link https://github.com/philkra/elastic-apm-php-agent/issues/3
      *
      * @param array $contexts
-     * @param ?Transaction $parent
+     * @param Transaction $parent
      */
-    public function __construct(array $contexts, ?Transaction $parent = null)
+    public function __construct(array $contexts, Transaction $parent = null)
     {
         // Generate Random Event Id
         $this->id = self::generateRandomBitsInHex(self::EVENT_ID_BITS);
@@ -117,7 +117,7 @@ class EventBean
      *
      * @return string $traceId
      */
-    public function getTraceId() : ?string
+    public function getTraceId() : string
     {
         return $this->traceId;
     }
@@ -147,7 +147,7 @@ class EventBean
      *
      * @return string
      */
-    final public function getParentId() : ?string
+    final public function getParentId()
     {
         return $this->parentId;
     }
@@ -157,7 +157,7 @@ class EventBean
      *
      * @return int
      */
-    final public function getParentTimestampOffset(): ?int
+    final public function getParentTimestampOffset(): int
     {
         return $this->parentTimestampOffset;
     }

@@ -218,7 +218,7 @@ class Agent
      *
      * @return void
      */
-    public function captureThrowable(\Throwable $thrown, array $context = [], ?Transaction $parent = null)
+    public function captureThrowable(\Throwable $thrown, array $context = [], Transaction $parent = null)
     {
         $this->putEvent($this->factory()->newError($thrown, array_replace_recursive($this->sharedContext, $context), $parent));
     }
