@@ -1,5 +1,5 @@
 {
-    "name" : "philkra/elastic-apm-php-agent",
+    "name" : "drbiko/elastic-apm-php-agent",
     "description": "A php agent for Elastic APM v2 Intake API",
     "license": "MIT",
     "require" : {
@@ -42,6 +42,10 @@
             "name" : "Mohamed Al Ashaal",
             "email" : "mohamed.alashaal@speakol.com",
             "homepage" : "https://github.com/speakol-ads"
+        },
+        {
+            "name" : "Biko Allen",
+            "email": "biko@docresponse.com"
         }
     ]
 }
